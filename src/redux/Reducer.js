@@ -42,6 +42,23 @@ const cocktailReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+    case actionType.SEARCH_COCKTAIL_START:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.SEARCH_COCKTAIL_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        cocktails: action.payload,
+      };
+    case actionType.SEARCH_COCKTAIL_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }

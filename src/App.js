@@ -3,6 +3,7 @@ import "./App.css";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import "../src/components/main.css";
+import Search from "./components/Search/Search";
 
 const Home = lazy(() => {
   return new Promise((resolve) => {
@@ -22,6 +23,7 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<h2>Loading...</h2>}>
         <Navbar />
+        <Search />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -32,5 +34,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
